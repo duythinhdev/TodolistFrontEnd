@@ -1,3 +1,3 @@
 export const enviroment  = {
-    api: "localhost:10000/",
+    api: "http://localhost:10000/v1",
 }

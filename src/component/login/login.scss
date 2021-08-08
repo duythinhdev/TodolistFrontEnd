@@ -1,7 +1,16 @@
+@import "src/sass/abstract/variable";
+@import "src/sass/abstract/mixin";
+*html{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .container{
   width: 100vw;
   height: 100vh;
-  background-color: #61dafb;
+  //background-color: #61dafb;
+  background-image: url("../../asset/imagelogin/243612.jpg");
+  background-size: cover;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -16,7 +25,7 @@
     //box-shadow: rgb(0,0,0,5);
     &-title{
       h3{
-        color: #282c34;
+        color: $black;
       }
     }
     &-email{
@@ -65,7 +74,7 @@
         outline: none;
         border-radius: 2px;
         border: none;
-        box-shadow: darkgray;
+        box-shadow: $darkgray;
         cursor: pointer;
         font-weight: bold;
       }
@@ -76,7 +85,7 @@
     &-textOr{
       margin-top: 20px;
       span{
-        color: darkgray;
+        color: $darkgray;
       }
     }
   }

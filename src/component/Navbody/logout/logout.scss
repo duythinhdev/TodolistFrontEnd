@@ -1,0 +1,32 @@
+.containerLogout {
+  position: absolute;
+  top: 8%;
+  left: 80.2%;
+  background-color: #DFE1E6;
+  border: 1px solid #DFE1E6;
+  width: 300px;
+  height: 350px;
+}
+@media  (max-width: 768px) {
+  .containerLogout {
+    position: fixed;
+    top: 11%;
+    left: 80.5%;
+    background-color: #DFE1E6;
+    border: 1px solid #DFE1E6;
+    width: 270px;
+    height: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .containerLogout {
+    position: fixed;
+    top: 11%;
+    left: 79.5%;
+    background-color: #DFE1E6;
+    border: 1px solid #DFE1E6;
+    width: 270px;
+    height: 300px;
+    border-radius: 3px;
+  }
+}
