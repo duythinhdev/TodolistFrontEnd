@@ -22,6 +22,7 @@ export const GetTaskList = (title: any) =>{
     }
 }
 export const putTask = (id:number,title:any) => {
+    console.log("id",id,"title",title)
     return {
         type: actiontype.PUT_TASK_APP,
         id:id,

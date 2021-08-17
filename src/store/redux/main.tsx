@@ -5,12 +5,14 @@ interface tsInitialState {
     isLoad: boolean,
     tokenCompare: string,
     listTask: [],
+    isTask: boolean,
 }
 
 const initialState: tsInitialState = {
     isLoad: false,
     tokenCompare: '',
-    listTask: []
+    listTask: [],
+    isTask: false,
 }
 const ListBoard = (action: any,state:any) => {
     return updateObject(state,{listTask: action.title})

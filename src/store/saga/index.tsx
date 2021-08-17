@@ -10,8 +10,8 @@ export function* watchLogin() {
 
 export function* watchTodoTask() {
     yield all([
-        takeLatest(actionTypes.ADD_TASK_APP,addTask),
+        takeEvery(actionTypes.ADD_TASK_APP,addTask),
         takeEvery(actionTypes.GET_TASK_APP,getTask),
-        takeLatest(actionTypes.PUT_TASK_APP,putTask),
+        takeEvery(actionTypes.PUT_TASK_APP,putTask),
     ])
 }

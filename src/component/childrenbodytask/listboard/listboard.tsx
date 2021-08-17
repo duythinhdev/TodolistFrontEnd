@@ -3,7 +3,7 @@ import "./listboard.scss";
 import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../../../store/action/index"
 import Childrenlistboard from "./childrenlistboard/childrenlistboard";
-import AddIcon from '@material-ui/icons/Add';
+import CloseIcon from '@material-ui/icons/Close';
 
 const Listboard = () => {
     const [title, setTitle] = useState();
@@ -24,13 +24,18 @@ const Listboard = () => {
             let action = await actions.AddTask(title, order);
             await dispatch(action);
         }
-        setIsClickTitle(true)
     }
     const hideValue = (index: number) => {
         setIndexs(index)
     }
     const showValue = (index: number) => {
         setIndexs(index);
+    }
+    const showTitle = () => {
+        setIsClickTitle(true)
+    }
+    const hideTitle = () => {
+        setIsClickTitle(false)
     }
     useEffect(() => {
         let action = actions.GetTask();
@@ -42,18 +47,21 @@ const Listboard = () => {
                 listTask={listTask.data}
                 indexState={indexs}
                 hideValue={hideValue}
-                showValue={showValue} />
+                showValue={showValue}/>
 
-            <div >
+            <div>
                 <form className="itemadd-task" onSubmit={(event) => {
                     postTaskTitle(event)
                 }}>
-                    {isClickTitle &&
-                    <input placeholder="add Task" name="title" onChange={(event) => changeValueTitle(event)} />}
-                    <button onClick={(event) => {
-                        postTaskTitle(event)
-                    }}>Thêm
-                    </button>
+                    <div>
+                        {isClickTitle &&
+                        <input placeholder="add Task" name="title" onChange={(event) => changeValueTitle(event)}/>}
+                        {isClickTitle && <button onClick={(event) => {
+                            postTaskTitle(event)}}>Thêm</button>}
+                        {isClickTitle &&
+                        <CloseIcon style={{cursor: 'pointer', fontSize: "25px",}} onClick={() => hideTitle()}/>}
+                    </div>
+                    {!isClickTitle && <span style={{cursor: 'pointer'}} onClick={() => showTitle()}>Thêm Task</span>}
                 </form>
             </div>
         </div>
