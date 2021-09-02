@@ -14,7 +14,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 90px;
+      width: 150px;
       height: 70px;
       .itemNavbody-left--personal{
         width: 50px;
@@ -22,6 +22,26 @@
         border-radius: 50%;
         background-color: orange;
         cursor: pointer;
+      }
+      .itemNavbody-left__menuShow{
+        margin-right: 20px;
+        cursor: pointer;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+          border-radius: 5px;
+          background-color: #DFE1E6;
+          width: 35px;
+          height: 35px;
+        }
+        &:active{
+          border-radius: 5px;
+          width: 35px;
+          background-color: #DFE1E6;
+          height: 35px;
+        }
       }
     }
     &--controlTask{

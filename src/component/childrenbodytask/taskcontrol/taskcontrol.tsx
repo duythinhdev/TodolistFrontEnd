@@ -3,7 +3,7 @@ import {tabBar} from "../constant/constant";
 import Listtask from "../listtask/listtask";
 import Listboard from "../listboard/listboard";
 interface props {
-    tab:Object
+    tab:Object,
 }
 const Taskcontrol:React.FC<props> = ({tab}) => {
 
@@ -12,9 +12,9 @@ const Taskcontrol:React.FC<props> = ({tab}) => {
         case tabBar.List:
             return <Listtask />;
         case tabBar.Board:
-            return <Listboard />;
+            return <Listboard  />;
         default :
-            return <Listboard />;
+            return <Listboard  />;
     }
     return (
         <></>

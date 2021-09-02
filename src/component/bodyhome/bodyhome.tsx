@@ -4,7 +4,7 @@ import Navigation from "../Navigation/Navigation";
 function Bodyhome() {
     return (
         <div className="containerHome">
-            <Navigation />
+            <Navigation   />
         </div>
     );
 }

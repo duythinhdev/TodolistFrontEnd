@@ -29,3 +29,9 @@ export const putTask = (id:number,title:any) => {
         title:title
     }
 }
+export const setMenu = (isMenu:boolean) => {
+    return {
+        type: actiontype.IS_MENU_APP,
+        isMenu: isMenu
+    }
+}

@@ -5,7 +5,10 @@ import * as actions from "../../../store/action/index"
 import Childrenlistboard from "./childrenlistboard/childrenlistboard";
 import CloseIcon from '@material-ui/icons/Close';
 
-const Listboard = () => {
+interface props{
+
+}
+const Listboard:React.FC<props> = ({}) => {
     const [title, setTitle] = useState();
     const [isClickTitle, setIsClickTitle] = useState(false as boolean);
     const [order, setOrder] = useState(0 as number);

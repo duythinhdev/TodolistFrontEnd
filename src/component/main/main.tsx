@@ -3,7 +3,7 @@ import Navigation from "../Navigation/Navigation";
 const Main = () => {
     return (
         <div>
-            <Navigation />
+            {/*<Navigation />*/}
         </div>
     );
 }

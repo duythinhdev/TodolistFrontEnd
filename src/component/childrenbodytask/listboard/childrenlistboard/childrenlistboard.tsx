@@ -37,16 +37,17 @@ const Childrenlistboard: React.FC<propsLisBoard> = ({listTask, indexState, hideV
         <>
             {
                 listTask && listTask.map((res: any, index: number) => {
-                    return <form className="itemget-task" key={index}
+                    return <form className="itemget--task" key={index}
                                  onSubmit={() => putValueTask(res._id) }>
-                        {indexState === index ? <input key={index} defaultValue={res.title}
+                        {indexState === index ? <input className="itemget--task__input" key={index} defaultValue={res.title}
                                                        onChange={(event) => changeValue(event)}
                                                        onClick={() => hideValue(index)}/> :
-                            <span className="itemget-task__span" onClick={() => showValue(index)}>{res.title}</span>}
+                            <span className="itemget--task__span" onClick={() => showValue(index)}>{res.title}</span>}
                         {
-                            hideshowAddTask &&  indexInAddTask === index && <div  onClick={(event)=>hideAddTask(event,index)}><input  /></div>
+                            hideshowAddTask && indexInAddTask === index && <div onClick={(event) => hideAddTask(event, index)}><input/></div>
                         }
-                        <button  className="itemget-task__AddTask" onClick={(event)=>showAddTask(event,index)} ><AddIcon style={{fontSize:"15px"}}  />Add Task</button>
+                            <button  className="itemget--task__AddTask" onClick={(event)=>showAddTask(event,index)} ><AddIcon style={{fontSize:"15px"}}  />Add Task</button>
+
                     </form>
                 })
             }

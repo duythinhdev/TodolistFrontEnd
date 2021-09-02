@@ -12,7 +12,7 @@ import Home from "./component/bodyhome/bodyhome";
 import Task from "./component/bodyTask/bodytask";
 import Listtask from "./component/childrenbodytask/listtask/listtask";
 import Listboard from "./component/childrenbodytask/listboard/listboard";
-import Navbody from "./component/Navbody/navbody";
+
 const App = () => {
     let router = <Router>
         <div>

@@ -1,20 +1,22 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import "./Navigation.scss";
-import ListIcon from '@material-ui/icons/List';
 import {GoHome} from "react-icons/go";
 import {
     Link
 } from "react-router-dom";
-
-let linkHome = <Link to="/home">Home</Link>
-let linkTask = <Link to="/Task">My Task</Link>
+import * as actions from  "../../store/action/index";
+import {useDispatch, useSelector} from "react-redux";
+import MenuIcon from "@material-ui/icons/Menu";
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+let linkHome = <Link style={{ textDecoration:"none" }} to="/home">Home</Link>
+let linkTask = <Link  style={{ textDecoration:"none" }} to="/Task">My Task</Link>
 const constantMenu: any = [
     {
-        icon: <Link to="/home"><GoHome/></Link>,
+        icon: <Link to="/home"><GoHome style={{ color:"blue" }} /></Link>,
         name: linkHome
     },
     {
-        icon: <Link to="/task"><GoHome/></Link>,
+        icon: <Link to="/task"><CheckCircleOutlineIcon  /></Link>,
         name: linkTask
     },
     {
@@ -35,7 +37,11 @@ const constantMenu: any = [
     }
 ]
 
-const Navigation = () => {
+interface props {
+
+}
+const Navigation:React.FC<props> = ({}) => {
+    let dispatch = useDispatch();
     let clickBorder = (index: number) => {
         let navigation = document.getElementsByClassName("item-body__navigation") as HTMLCollectionOf<any>;
         for (let i = 0; i < navigation.length; i++) {
@@ -49,15 +55,20 @@ const Navigation = () => {
         navigation[index].style.height = "40px";
         navigation[index].style.cursor = "pointer";
     }
+    let isMenu: any = useSelector((state:any)=>state.main.isMenu);
+    const clickMenu = () => {
+        let action = actions.setMenu(true);
+        dispatch(action);
+    }
     return (
-        <div className="containerNavigation">
+        <div className={"containerNavigation " + (isMenu && "actives")}>
             <div className="item-header">
                 <div className="item-header__logo">
                     <h3>Trello</h3>
                 </div>
                 <div className="item-header__icon">
                     <div className="item-header__icon--Menu">
-                        <ListIcon className="iconMenu"/>
+                        <span className="iconMenu"  onClick={()=>clickMenu()} > <MenuIcon color="inherit" style={{fontSize: '30px'}} /></span>
                     </div>
                 </div>
             </div>
