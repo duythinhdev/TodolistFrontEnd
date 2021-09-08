@@ -1,0 +1,14 @@
+.container-childrenHome {
+  display: flex;
+  flex-direction: column;
+  width: 86.9vw;
+  height: 100vh;
+  overflow: hidden;
+  &.active{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}

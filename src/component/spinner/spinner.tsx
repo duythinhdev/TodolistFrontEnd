@@ -3,7 +3,7 @@ import "./spinner.scss";
 
 const Spinner = () => {
     return (
-        <div className="container" >
+        <div className="container">
             <div className="item_model"></div>
             <div className="sk-cube-grid">
                 <div className="sk-cube sk-cube1"></div>

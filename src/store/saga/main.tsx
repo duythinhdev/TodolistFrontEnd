@@ -4,8 +4,8 @@ import {enviroment} from "../../enviroment/enviroment";
 import * as action from "../action/index";
 
 export function* addTask(actions: any) {
-    let { titleValue } = actions;
-    console.log("title",titleValue)
+    let {titleValue} = actions;
+    console.log("title", titleValue)
     let body = {
         title: actions.title,
         order: actions.order
@@ -25,15 +25,16 @@ export function* getTask() {
         console.log(e);
     }
 }
-export function* putTask(actions:any){
+
+export function* putTask(actions: any) {
     let body = {
-        title:actions.title
+        title: actions.title
     };
     let idParams = actions.id;
     console.log(body);
-    yield axios.put(enviroment.api + `/main/puttask?id=${idParams}`,body).then((res)=>{
+    yield axios.put(enviroment.api + `/main/puttask?id=${idParams}`, body).then((res) => {
         console.log(res)
-    }).catch(err=>{
+    }).catch(err => {
         console.log(err)
     })
 }

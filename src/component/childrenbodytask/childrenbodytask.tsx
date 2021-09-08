@@ -4,22 +4,9 @@ import Navbody from "../Navbody/navbody";
 import Taskcontrol from "./taskcontrol/taskcontrol";
 import {tabBar } from "./constant/constant";
 import {useDispatch, useSelector} from "react-redux";
+import * as actions from "../../store/action";
 
 
-const navlink = [
-    {
-        name:tabBar.List,
-    },
-    {
-        name:tabBar.Board,
-    },
-    {
-        name:tabBar.Calendar,
-    },
-    {
-        name:tabBar.Files,
-    }
-]
 interface props {
 
 }
@@ -29,9 +16,16 @@ const Childrenbodytask:React.FC<props> = ({}) => {
         setTab(name)
     }
     let isMenu: boolean = useSelector((state:any)=>state.main.isMenu);
+    let dispatch = useDispatch();
+    useEffect(()=>{
+        let actionIsTask =  actions.setTask(true);
+        dispatch(actionIsTask);
+        let actionIsHome =  actions.setHome(false);
+        dispatch(actionIsHome);
+    },[])
     return (
         <div className={"childrenBodyTask " + (isMenu && "active")}>
-            <Navbody navlink={navlink} switchs={switchComponent} />
+            <Navbody switchs={switchComponent} />
             <Taskcontrol tab={tab} />
         </div>
     );

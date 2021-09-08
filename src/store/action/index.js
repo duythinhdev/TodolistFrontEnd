@@ -6,5 +6,7 @@ export {
     GetTask,
     GetTaskList,
     putTask,
-    setMenu
+    setMenu,
+    setHome,
+    setTask
 } from "../action/main";

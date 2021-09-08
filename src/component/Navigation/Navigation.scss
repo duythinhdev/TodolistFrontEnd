@@ -4,20 +4,22 @@
   width: 13vw;
   height: 100vh;
   background: linear-gradient($navHeaderA,$navHeaderB);
-  display: flex;
+  display: $flex;
   flex-direction: column;
   @include respond(phone)
   {
     display: none;
   }
   &.actives{
+    transition: 5s all ease-in;
+    width: 0vw;
     display: none;
   }
   .item-header{
     width: 100%;
     height: 70px;
     background-color: #65dfc9;
-    display: flex;
+    display: $flex;
     flex-direction: row;
     &__logo{
       flex: 1;
@@ -27,7 +29,7 @@
       }
     }
     &__icon{
-      display: flex;
+      display: $flex;
       justify-content: flex-end;
       align-items: center;
       &--Menu{
@@ -40,12 +42,12 @@
       width: 100%;
       height: 260px;
       //background-color: #FFFFFF;
-      display: flex;
+      display: $flex;
       flex-direction: column;
       &__navigation{
         width: 100%;
         height: 40px;
-        display: flex;
+        display: $flex;
         flex-direction: row;
         justify-content:flex-start;
         align-items: center;

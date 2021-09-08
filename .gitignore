@@ -1,13 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+/todolistapplist/node_modules
 /.pnp
 .pnp.js
-
+/todolistapplist/.env.example
 # testing
 /coverage
-
 # production
 /build
 

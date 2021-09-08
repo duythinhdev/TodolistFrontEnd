@@ -15,7 +15,6 @@ export const GetTask = () => {
 }
 
 export const GetTaskList = (title: any) =>{
-    console.log("titleget",title.data)
     return {
         type: actiontype.GET_TASK_LIST_APP,
         title:title.data
@@ -33,5 +32,17 @@ export const setMenu = (isMenu:boolean) => {
     return {
         type: actiontype.IS_MENU_APP,
         isMenu: isMenu
+    }
+}
+export const setHome = (isHome:boolean) => {
+    return {
+        type: actiontype.IS_HOME_APP,
+        isHome: isHome
+    }
+}
+export const setTask = (isTask:boolean) => {
+    return {
+        type: actiontype.IS_TASK_APP,
+        isTask:isTask
     }
 }
